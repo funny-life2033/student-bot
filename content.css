@@ -1,0 +1,66 @@
+.student-bot {
+    position: fixed;
+    z-index: 1000;
+    bottom: 100px;
+    left: 50%;
+    background: linear-gradient(90deg, rgb(63, 161, 247) 0%, rgb(74, 106, 221) 100%);
+    padding: 20px;
+    border-radius: 10px;
+    filter: drop-shadow(rgba(0, 0, 0, 0.48) 0px 0px 1px) drop-shadow(rgba(0, 0, 0, 0.24) 0px 16px 32px);
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.student-bot #bot-management {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: 10px;
+}
+
+.student-bot button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 8px;
+    height: 32px;
+    /* transition: background-color 0.2s ease 0s; */
+}
+
+.student-bot button:hover {
+    background-color: gray;
+}
+
+.student-bot #start-btn {
+    display: block;
+}
+
+.student-bot #stop-btn {
+    display: none;
+}
+
+.student-bot[is-working] #start-btn {
+    display: none;
+}
+
+.student-bot[is-working] #stop-btn {
+    display: block;
+}
+
+.student-bot #bot-account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.student-bot #connect-error {
+    color: red;
+}

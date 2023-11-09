@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Student Bot",
+  "version": "1.0",
+  "description": "",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "tabs", "storage", "notifications", "windows","alarms"],
+  "host_permissions": ["http://*/*", "https://*/*", "<all_urls>"],
+  "background": {
+    "scripts": ["socket.io.js", "background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.gov.uk/book-driving-test","https://www.gov.uk/change-driving-test","https://driverpracticaltest.dvsa.gov.uk/*"],
+      "css": ["content.css"],
+      "js": ["axios.min.js", "content.js"]
+    }
+  ],
+  "web_accessible_resources": ["inject.js"],
+  "externally_connectable": {
+    "matches": ["http://*/*", "https://*/*", "<all_urls>"]
+  }
+}
